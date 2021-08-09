@@ -1,0 +1,11 @@
+<!-- Header Component -->
+<app-header></app-header>
+
+<!-- Main Layout -->
+<div [class.main]="showNavBar" [class.user_sidebar]="showUserNavBar">
+
+	<!-- Pages Content -->
+	<div class="pages_content">
+		<ng-content select="[component]"></ng-content>
+	</div>
+</div>

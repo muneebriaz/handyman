@@ -1,0 +1,264 @@
+input,
+textarea,
+select {
+  @include input;
+}
+
+select {
+  background: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAMCAYAAAAK/x/DAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyZpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuNi1jMTQ1IDc5LjE2MzQ5OSwgMjAxOC8wOC8xMy0xNjo0MDoyMiAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wTU09Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9tbS8iIHhtbG5zOnN0UmVmPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvc1R5cGUvUmVzb3VyY2VSZWYjIiB4bWxuczp4bXA9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC8iIHhtcE1NOkRvY3VtZW50SUQ9InhtcC5kaWQ6MzEzQjg4MjM1N0ExMTFFQTg4MkFFNEFFODlFQzM5ODgiIHhtcE1NOkluc3RhbmNlSUQ9InhtcC5paWQ6MzEzQjg4MjI1N0ExMTFFQTg4MkFFNEFFODlFQzM5ODgiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENDIDIwMTQgKFdpbmRvd3MpIj4gPHhtcE1NOkRlcml2ZWRGcm9tIHN0UmVmOmluc3RhbmNlSUQ9InhtcC5paWQ6RUVCMzRFQUFDMDk0MTFFN0E2MTNBQjY2Nzk4OUNGQzIiIHN0UmVmOmRvY3VtZW50SUQ9InhtcC5kaWQ6RUVCMzRFQUJDMDk0MTFFN0E2MTNBQjY2Nzk4OUNGQzIiLz4gPC9yZGY6RGVzY3JpcHRpb24+IDwvcmRmOlJERj4gPC94OnhtcG1ldGE+IDw/eHBhY2tldCBlbmQ9InIiPz5Yq38wAAAAnElEQVR42mL8//8/w2ACTAyDDGA4iJGRkQOI7RkhgIEA5gFiaxCbagAUZcgYCKpBwkA8HeQ+PFr5gfgkVK0lujnkYmwO0gLi1wQchewYEM1FSweBgC4eR6E7hh9bSFPbQbgchdUx9HIQuqNm43IMPR2E7iisjqG3g2COegnEx7A5hpoOYkR3BJ4yhRWI/0BDCauDqAEYB1vVARBgABtA+lgQEdy+AAAAAElFTkSuQmCC) no-repeat right, $white;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  padding: 12px 50px 12px 15px;
+}
+
+/* Checkbox */
+/* Radio */
+/* Switch */
+
+.radio_checkbox_wrpr {
+  .radio_checkbox_btns {
+    margin-top: 0;
+  }
+}
+
+.radio_checkbox_btns {
+  margin: 20px 0;
+}
+
+.radio_checkbox_btns.inline_labels {
+  display: grid;
+  grid-template-columns: 48% 48%;
+  column-gap: 12px;
+  row-gap: 4px;
+
+  label.radio_label,
+  label.checkbox_label {
+    display: inline-grid;
+    flex: 1 0 120px;
+    font-weight: 400;
+  }
+}
+
+label.checkbox_label {
+  @include grid(auto 1fr, 19px);
+  align-items: center;
+  cursor: pointer;
+  margin: 0 0 10px 0;
+  font-weight: 400;
+}
+
+input.checkbox {
+  display: none;
+
+  &:checked {
+    + {
+      .check_icon {
+        border-color: $primary-green;
+        background: $primary-green;
+
+        &:before {
+          transform: scale(1);
+          opacity: 1;
+        }
+      }
+    }
+  }
+}
+
+.check_icon {
+  @include dimension(22px);
+  @include transition;
+  position: relative;
+  display: inline-block;
+  top: 2px;
+  border: solid 1px #cecece;
+  background-color: $white;
+  border-radius: 3px;
+
+  &:before {
+    @include dimension(100%);
+    @include font(12px, 900);
+    @include abs_position(1px, null, null, null);
+    @include transition;
+    content: "\f00c";
+    font-family: "FontAwesome";
+    color: $white;
+    text-align: center;
+    transform: scale(1.5);
+    opacity: 0;
+  }
+}
+
+
+label.radio_label {
+  @include grid(auto 1fr, 19px);
+  position: relative;
+  cursor: pointer;
+  margin: 0 0 10px 0;
+  font-weight: 400;
+}
+
+input.radio {
+  @include dimension(28px, 18px);
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  cursor: pointer;
+  outline: none;
+  display: none;
+
+  &:checked {
+    + {
+      .radio_icon {
+        background: $primary-green;
+        border-color: $primary-green;
+
+        &:before {
+          background: #f0f3f6;
+          transform: scale(.35);
+        }
+      }
+    }
+  }
+}
+
+span.radio_icon {
+  @include dimension(22px);
+  @include transition;
+  position: relative;
+  display: inline-block;
+  border: solid 1px #cecece;
+  background-color: $white;
+  border-radius: 50%;
+  top: 0px;
+  left: 10px;
+  cursor: pointer;
+  z-index: 4;
+
+  &:before {
+    @include dimension(20px);
+    @include transition;
+    @include abs_position(calc(50% - 10px), null, null, calc(50% - 10px));
+    content: '';
+    border-radius: 50%;
+    background: $primary-green;
+    transform: scale(0);
+  }
+}
+
+label.setting {
+  @include grid(null, 10px);
+  grid-template-areas: "col-1 col-2 col-3";
+  cursor: pointer;
+  align-items: center;
+
+  .on {
+    color: rgba(0, 0, 0, 0.3);
+    grid-area: col-3;
+  }
+
+  .icon {
+    @include dimension(40px, 24px);
+    @include transition;
+    cursor: pointer;
+    grid-area: col-2;
+    justify-self: center;
+    position: relative;
+    border-radius: 12px;
+    background-color: rgba(0, 0, 0, 0.07);
+    box-shadow: inset 0px 0px 4px -2px rgba(0, 0, 0, 0.1);
+    cursor: pointer;
+    outline: none;
+
+    span {
+      @include dimension(25.72px);
+      @include abs_position(calc(50% - 13px), null, null, 0);
+      @include transition;
+      content: '';
+      border-radius: 50%;
+      box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.17);
+      background-color: $white;
+      transform: scale(.7);
+
+      &:before {
+        @include abs_position(calc(50% - 4px), null, null, calc(50% - 1px));
+        @include dimension(2px, 8px);
+        content: '';
+        background: $primary-green;
+        background: #d71830;
+      }
+    }
+  }
+
+  .off {
+    color: rgba(0, 0, 0, 0.6);
+    grid-area: col-1;
+    justify-self: flex-end;
+  }
+}
+
+input.switch {
+  cursor: pointer;
+  grid-area: col-2;
+  justify-self: center;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  outline: none;
+  display: none;
+
+  &:checked {
+    + {
+      .icon {
+        background: $primary-green;
+
+        span {
+          left: calc(100% - 25.732px);
+
+          &:before {
+            background: $primary-green;
+          }
+        }
+      }
+    }
+
+    ~ {
+      .on {
+        color: rgba(0, 0, 0, 0.6);
+      }
+
+      .off {
+        color: rgba(0, 0, 0, 0.3);
+      }
+    }
+
+    background: $primary-green;
+  }
+}
+
+
+
+// Auth Button
+.auth_button_div {
+  margin-top: 30px;
+  margin-bottom: 22px;
+}
+
+.auth_button {
+  @include primary_btn($primary-green, $white, 100%);
+  padding: 19px 26px;
+
+  &:focus,
+  &:hover {
+    outline: none;
+    background: $primary-blue;
+    color: $white;
+  }
+}
+
+input[type="submit"],
+input[type="reset"],
+input[type="button"] {
+  outline: none;
+}

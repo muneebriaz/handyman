@@ -1,0 +1,42 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;700;900&family=Nunito+Sans:ital,wght@0,300;0,400;0,600;0,700;0,800;0,900;1,200&display=swap');
+
+// * {
+//   font-family: $noto_sans;
+// }
+
+// h1,
+// h2,
+// h3,
+// h4,
+// h5,
+// h6 {
+//   font-family: $nunito_sans;
+// }
+
+.title_h3 {
+  @include font(22px, 600);
+  color: $primary-blue;
+  margin: 10px 0 30px 0;
+}
+
+.title_h4 {
+  @include font(20px, 600);
+  color: $primary-blue;
+  margin: 10px 0 30px 0;
+}
+
+.title_h5 {
+  @include font(18px, 600);
+  color: $primary-blue;
+  margin: 10px 0 20px 0;
+}
+
+.title_h6 {
+  @include font(16px, 600);
+  color: $primary-blue;
+  margin: 10px 0 20px 0;
+}
+
+p {
+  color: #5f658e;
+}

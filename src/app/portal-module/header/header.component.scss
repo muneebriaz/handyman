@@ -1,0 +1,177 @@
+@import '../../../scss/mixins';
+@import '../../../scss/variables';
+
+.header {
+  @include dimension(100%, 80px);
+  @include grid(260px auto 43px, 12px);
+  @include header;
+
+  @include media(xlscreen) {
+    @include grid(60px auto 43px, 12px);
+    padding-left: 10px;
+  }
+}
+
+#logo {
+  @include dimension(78px, auto);
+
+  @include media(xlscreen) {
+    @include dimension(60px, auto);
+  }
+}
+
+
+.breadcrumb_actions_div {
+  @include valign_center;
+  gap: 20px;
+  margin-left: 8px;
+}
+
+.upgrade_btn {
+  color: #FFF;
+  padding: 11px 30px;
+  background: #1778F2;
+  outline: none;
+  border: 1px solid transparent;
+  border-radius: 30px;
+
+  &:hover {
+    background: $primary-blue;
+  }
+}
+
+.cursor-pointer {
+  cursor: pointer;
+}
+
+/* User Account */
+.user_div.dropdown.open button {
+  background: $primary-green;
+  color: $white;
+}
+
+.userinfo_li {
+  padding: 15px 20px 15px 60px;
+  border-bottom: #f0f0f0 solid 1px;
+  margin-bottom: 10px;
+
+  .usericon_div {
+    @include abs_position(32px, auto, auto, 20px);
+
+    svg {
+      @include dimension(26px, auto);
+      fill: $primary-green;
+      margin-bottom: 10px;
+    }
+  }
+
+  .username {
+    @include text_shorten;
+    @include font(null, 600);
+    display: block;
+  }
+
+  .useremail {
+    @include text_shorten;
+    display: block;
+  }
+}
+
+.user_div.dropdown {
+  button {
+    @include dimension(43px);
+    background: $white;
+    color: $primary-green;
+    border: $primary-green solid 2px;
+    z-index: 9;
+    margin: 18px 0 0 0;
+    text-align: center;
+    border-radius: 60px;
+    padding: 8px;
+    padding-top: 6px;
+
+    i {
+      transition: .1ms ease-in-out;
+      font-size: 20px;
+    }
+
+    &:hover {
+      background: $primary-green;
+      color: $white;
+    }
+  }
+
+  ul {
+    @include font(14px);
+    width: 220px;
+    border: #f0f0f0 solid 1px;
+    top: calc(100% + 5px);
+    right: 0;
+    left: auto;
+    padding: 10px 0;
+    box-shadow: 0px 4px 10px 0px rgba(0, 0, 0, 0.10);
+
+    li {
+      a {
+        @include font(14px);
+        padding: 10px 20px;
+        color: $primary-blue;
+        display: block;
+
+        &:hover {
+          color: $primary-green;
+          background: #00D18410;
+          text-decoration: none;
+          cursor: pointer;
+        }
+      }
+    }
+  }
+}
+
+.user_div {
+  position: fixed;
+  right: 20px;
+  top: 0px;
+  z-index: 999;
+  padding: 0;
+  color: $primary-blue;
+  text-align: right;
+}
+
+.auto-margin{
+  margin: auto !important;
+}
+
+.nav-link{
+  font-size: 18px !important;
+  padding-left: 20px !important;
+  padding-right: 20px !important;
+  color: #0f3462;
+}
+
+.navbar-light .navbar-nav .nav-link.active {
+  color: #ee5151;
+}
+
+
+
+.navbar-brand {
+  display: inline-block;
+  padding-top: 0.3125rem;
+  padding-bottom: 0.3125rem;
+  margin-right: 1rem;
+  font-size: 22px;
+  line-height: inherit;
+  white-space: nowrap;
+  font-weight: 800;
+  color: #ee5151;
+}
+
+.header-btn{
+  padding: 20px;
+  background: #ee5151;
+  border: #ee5151;
+  color: white;
+  border-radius: 12px;
+}

@@ -1,0 +1,191 @@
+@import '../scss/variables';
+
+// Layout mixins
+@mixin header {
+  align-items: center;
+  position: fixed;
+  top: 0;
+  z-index: 9999;
+  background: $white;
+  border-bottom: 2px solid #f2f2f2;
+  padding: 18px 20px;
+}
+
+@mixin valign_center {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+@mixin block_center {
+  margin: 0 auto;
+  float: none;
+  display: block;
+}
+
+@mixin grid($gtc, $gap, $valign: null) {
+  display: grid;
+  grid-template-columns: $gtc;
+  grid-gap: $gap;
+  align-items: $valign;
+}
+
+@mixin dimension($width, $height:$width) {
+  width: $width;
+  height: $height;
+}
+
+@mixin w_max_w($maxwidth, $width) {
+  max-width: $maxwidth;
+  width: $width;
+}
+
+@mixin card {
+  background: $white;
+  border-radius: 4px;
+  padding: 20px;
+  border: 1px solid #f0f0f0;
+  position: relative;
+}
+
+@mixin card_hover {
+  @include card;
+
+  &:hover {
+    border: 1px solid $primary-green;
+    cursor: pointer;
+  }
+}
+
+@mixin card_grey {
+  @include card;
+  border: 1px solid #ddd;
+  background: #f5f5f5;
+}
+
+
+// Form
+@mixin input {
+  @include font(14px, 400);
+  width: 100%;
+  color: $primary-blue;
+  border: 1px solid #f0f0f0;
+  border-radius: 2px;
+  background-color: $white;
+  padding: 12px 15px 12px 15px;
+  outline: none;
+
+  &:focus {
+    border-color: $primary-green;
+    outline: none;
+    box-shadow: none;
+  }
+}
+
+
+// Typography mixins
+@mixin text_shorten {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+@mixin validation_text($validationColor) {
+  @include font(13px, 400, null);
+
+  p {
+    color: $validationColor;
+    margin-top: 6px;
+    margin-bottom: 0px;
+  }
+}
+
+@mixin font($fsize, $fweight: null, $lheight: null) {
+  font-size: $fsize;
+  font-weight: $fweight;
+  line-height: $lheight;
+}
+
+
+// Position
+@mixin abs_position ($top, $right, $bottom, $left) {
+  position: absolute;
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}
+
+
+//  Transition
+@mixin transition($for: all, $time: 0.2s, $type: ease-in-out) {
+  -webkit-transition: $for $time $type;
+  -moz-transition: $for $time $type;
+  -ms-transition: $for $time $type;
+  -o-transition: $for $time $type;
+  transition: $for $time $type;
+}
+
+
+// Buttons
+@mixin primary_btn($bg, $txtcolor, $minwidth) {
+  @include font(15px, 400, 1.42857143);
+  background: $bg;
+  border: 0;
+  padding: 11px 26px;
+  color: $txtcolor;
+  border-radius: 50px;
+  display: inline-block;
+  min-width: $minwidth;
+  text-align: center;
+  transition: all 0.2s ease-in-out;
+
+  &:hover {
+    text-decoration: none;
+    cursor: pointer;
+  }
+
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+
+// Breakpoints
+@mixin media($size, $pixels: null) {
+  @if $size==xlscreen {
+    @media all and (max-width:1600px) {
+      @content;
+    }
+  }
+
+  @else if $size==laptop {
+    @media all and (max-width:1366px) {
+      @content;
+    }
+  }
+
+  @else if $size==desktop {
+    @media all and (max-width:992px) {
+      @content;
+    }
+  }
+
+  @else if $size==tablet {
+    @media all and (max-width:767px) {
+      @content;
+    }
+  }
+
+  @else if $size==mobile {
+    @media all and (max-width:560px) {
+      @content;
+    }
+  }
+
+  @else if $size==custom {
+    @media screen and (max-width: $pixels) {
+      @content;
+    }
+  }
+}

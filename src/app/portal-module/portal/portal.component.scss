@@ -1,0 +1,41 @@
+@import "../../../scss/mixins";
+
+.main {
+  // @include grid(260px 1fr, 20px);
+  margin: 104px 20px 30px 20px;
+
+  @include media(xlscreen) {
+    // @include grid(50px 1fr, 20px);
+  }
+}
+
+.main.iframe {
+  @include grid(1fr, 20px);
+  margin: 20px 20px 30px 20px;
+  
+  @include media(xlscreen) {
+    @include grid(1fr, 20px);
+  }
+}
+
+.side_navbar {
+  @include dimension(260px, auto);
+  z-index: 999;
+
+  @include media(xlscreen) {
+    width: 50px;
+  }
+}
+
+.user_sidebar {
+  @include grid(260px 1fr, 20px);
+  margin: 104px 20px 30px 20px;
+}
+
+.user_settings_sidebar {
+  @include dimension(260px, auto);
+}
+
+.header-hide {
+  display: none;
+}

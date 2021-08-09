@@ -1,0 +1,7 @@
+.error_text {
+    @include validation_text($failed-red);
+}
+
+.success_text{
+    @include validation_text($success-green);
+}

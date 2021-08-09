@@ -1,0 +1,1497 @@
+@import "../scss/mixins";
+@import "../scss/variables";
+@import "../scss/tooltip";
+
+.block {
+  margin: 30px 0;
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.card {
+  @include card;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.card_grey {
+  @include card_grey;
+  margin-bottom: 20px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+
+/* Auth */
+.agree_privacy_div {
+  @include font(12px);
+  margin: 24px 0;
+  text-align: center;
+
+  a {
+    color: $link-green;
+  }
+}
+
+.have_account_div {
+  @include font(null, 600);
+  margin: 10px 0 10px 0;
+  text-align: center;
+}
+
+.forgot_password_link {
+  color: $link-green;
+}
+
+.simplebar-wrapper {
+  max-height: 240px !important;
+}
+
+.simplebar-track.simplebar-vertical {
+  width: 10px !important;
+  top: 4px;
+  bottom: 4px;
+}
+
+.simplebar-track.simplebar-horizontal {
+  display: none !important;
+}
+
+.simplebar-track.simplebar-vertical .simplebar-scrollbar {
+  &:before {
+    opacity: 0.2 !important;
+  }
+}
+
+// Header App Info
+.header_app_info {
+  margin-left: auto;
+  max-width: 230px;
+  width: 100%;
+
+  @include media(laptop) {
+    display: none;
+  }
+
+  .app_info {
+    display: flex;
+    justify-content: space-between;
+
+    .content {
+      overflow: inherit;
+      padding: 0;
+
+      h3 {
+        @include font(16px, bold);
+        color: $primary-blue;
+        margin-bottom: 4px;
+      }
+
+      p {
+        color: #5f658e;
+        margin: 0;
+      }
+    }
+  }
+}
+
+
+/* Actions */
+.actions {
+  @include valign_center;
+  gap: 12px;
+  @include font(14px);
+  margin-left: auto;
+  text-align: right;
+
+  @include media(mobile) {
+    display: none;
+  }
+}
+
+
+/* Release */
+.select_dropdown {
+  @include valign_center;
+  @include dimension(100%, auto);
+  display: block;
+
+  span {
+    @include font(14px, 500);
+  }
+
+  select {
+    @include font(14px);
+    @include dimension(224px, auto);
+    margin-left: 15px;
+    padding: 10px 50px 10px 15px;
+  }
+}
+
+
+// Upload App
+.upload_status_div {
+  margin-top: -26px;
+  text-align: right;
+
+  .uploadpercent_txt {
+    position: relative;
+    padding-left: 28px;
+    margin-top: 10px;
+    display: inline-block;
+    font-weight: 600;
+
+    &::before {
+      content: '';
+      box-sizing: border-box;
+      position: absolute;
+      left: 0;
+      top: 2px;
+      display: inline-block;
+      width: 17px;
+      height: 17px;
+      border-radius: 50%;
+      border-top: 2px solid $primary-green;
+      border-right: 2px solid transparent;
+      -webkit-animation: .6s linear infinite spinner;
+      animation: .6s linear infinite spinner;
+    }
+  }
+}
+
+
+
+/* Dropdown Menu */
+.dropdown-toggle::after {
+  display: none;
+}
+
+.dropdown_btn_div {
+  @include font(14px);
+  // margin-left: 12px;
+
+  button~button  {
+    margin-left: 12px;
+  }
+
+  ul {
+    @include font(14px);
+    margin: 0;
+    left: 0;
+    right: auto !important;
+    min-width: 170px;
+    border: 1px solid #f0f0f0;
+    border-radius: 5px;
+    padding: 12px 0;
+    top: calc(100% + 5px);
+    box-shadow: 0 4px 10px 0 rgba(0, 0, 0, .1);
+
+    li {
+      a {
+        @include font(14px);
+        padding: 12px 15px;
+        display: block;
+
+        &:hover {
+          cursor: pointer;
+          color: $primary-green;
+          background: #00D18410;
+          text-decoration: none !important;
+        }
+      }
+    }
+  }
+}
+
+.dropdown {
+  // margin-bottom: 15px;
+
+  .dropdown-menu {
+    min-width: 170px;
+    padding: 12px 0;
+    border: 1px solid #f0f0f0;
+    // box-shadow: 0 4px 10px 0 rgb(0 0 0 / 10%);
+
+    .dropdown-item {
+      @include font(14px);
+      padding: 12px 15px;
+
+      &:hover {
+        cursor: pointer;
+        color: $primary-green;
+        background: #00D18410;
+      }
+    }
+  }
+}
+
+// Graph
+.graph_card {
+  @include card;
+  margin-bottom: 20px;
+
+  h4 {
+    @include font(16px, 700);
+    color: $primary-blue;
+    text-align: left;
+    margin: 0 0 10px;
+  }
+}
+
+
+// listing CSS
+.test_runs_list {
+  h3 {
+    @include font(22px, 600);
+    color: $primary-blue;
+    text-align: left;
+    margin: 10px 0 20px;
+  }
+}
+
+.list_header {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 0px 15px;
+  margin-bottom: 15px;
+
+  h5 {
+    font-family: $noto_sans;
+    @include font(14px, 700);
+    flex: 1 0 100px;
+    color: $primary-blue;
+    text-align: left;
+
+    span {
+      font-weight: normal;
+      display: block;
+      margin-top: 5px;
+    }
+  }
+}
+
+.list {
+  @include card_hover;
+  padding: 10px 15px;
+  margin-bottom: 4px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+
+  .div_with_actions {
+    display: flex;
+    gap: 20px;
+    flex: 9 auto;
+  }
+
+  p {
+    @include text_shorten;
+    flex: 1 0 100px;
+    color: #060c3bc4;
+    margin: 8px auto 8px 0;
+    max-width: 290px;
+  }
+
+  .web_screen_div {
+    @extend .actions_div;
+  }
+
+  .actions_performed {
+    @extend .actions_div;
+    @include card;
+    padding: 8px 10px !important;
+    margin: -1px 0 !important;
+    border-color: #d2d2d2;
+  }
+
+  .actions_div {
+    @include valign_center;
+    gap: 14px;
+    flex: 1 0 100px;
+    margin: 2px auto 2px 0;
+    padding: 2px 0;
+    max-width: 290px;
+
+    p {
+      margin: 0;
+    }
+
+    button {
+      cursor: pointer;
+      position: relative;
+
+      svg {
+        width: 28px;
+        color: $primary-green;
+      }
+    }
+
+    button:hover svg {
+      color: $primary-blue;
+    }
+  }
+
+  .last_runs_div {
+    gap: 0px;
+  }
+}
+
+
+// Cluster List
+.cluster_list{
+  .list_header, .list {
+    padding: 0px 10px;
+
+      h5, p {
+          @include valign_center;
+          gap: 16px;
+          margin: 0;
+
+          b {
+              font-weight: 700;
+              width: 40px;
+          }
+      }
+  }
+
+  .list {
+    padding: 8px 10px;
+
+    p {
+      b {
+        font-weight: normal;
+      }
+    }
+    .input_div {
+      margin: 0;
+      input {
+        padding: 8px 24px 8px 12px !important;
+      }
+      label {
+        margin-bottom: 0 !important;
+      }
+    }
+  }
+}
+
+
+// Status Override
+p.status_override_para {
+  position: relative;
+  padding-left: 90px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  display: block;
+  padding-top: 2px;
+  padding-bottom: 2px;
+  margin: 6px 0 5px 0 !important;
+
+  .status_span {
+    position: absolute;
+    left: 0;
+    top: 2px;
+    display: block;
+    width: 24px;
+    height: 24px;
+    border-radius: 50px;
+    text-align: center;
+    line-height: 24px;
+  }
+
+  .status_span.status_current_span {
+    left: 58px !important;
+  }
+
+  .status_override_arrow {
+    width: 18px;
+    position: absolute;
+    left: 32px;
+    top: 4px;
+  }
+}
+
+
+// Status
+p.status_para {
+  position: relative;
+  padding-left: 32px;
+  overflow: visible !important;
+}
+
+.status_span i {
+  border-radius: 50px;
+  color: $white;
+}
+
+.status_span {
+  position: absolute;
+  left: 0;
+  top: -2px;
+  display: block;
+  width: 24px;
+  height: 24px;
+  border-radius: 50px;
+  text-align: center;
+  line-height: 24px;
+}
+
+.status_span.success_green {
+  background: #6ac259;
+}
+
+.status_span.warning_yellow {
+  background: #FFCA3F;
+}
+
+.status_span.error_red {
+  background: #e50e0e;
+}
+
+.status_span.running_blue {
+  background: #134eb4;
+  color: $white;
+}
+
+/* Right Sidebar */
+.sidebar_title {
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0 0 20px 0;
+}
+
+.content {
+  // overflow: auto;
+  // padding-bottom: 8px;
+}
+
+.footer {
+  @include font(15px);
+  margin-top: auto;
+
+  p {
+    margin-top: 20px;
+    margin-bottom: 0;
+    padding: 4px 0px 4px 15px;
+    border-left: 3px solid $primary-green;
+
+    a {
+      color: $primary-green;
+
+      &:hover {
+        color: $primary-blue;
+      }
+    }
+  }
+}
+
+.nodata {
+  font-size: 14px;
+  text-align: center;
+  font-weight: 400;
+  border-radius: 2px;
+  background-color: #fff;
+  border: #F0F0F0 solid 1px;
+  width: 100%;
+  padding: 19px 15px;
+  margin-bottom: 5px;
+  margin-top: 0;
+}
+
+
+// Last 10 Runs
+.run_status_bar {
+  width: 12px;
+  height: 24px;
+  border-right: #FFF solid 2px;
+  font-size: 0;
+}
+
+.run_status_bar.passed_green {
+  background: #6ac259;
+}
+
+.run_status_bar.blocked_yellow {
+  background: #ffc225;
+}
+
+.run_status_bar.incomp_orange {
+  background: #ff6c00;
+}
+
+.run_status_bar.failed_red {
+  background: #e50e0e;
+}
+
+.run_status_bar.inprogress_blue {
+  background: #134eb4;
+}
+
+.run_status_bar.qbot_grey {
+  background: #5a606b;
+}
+
+.run_status_bar.failed_black {
+  background: black
+}
+
+
+// User Settings 
+.user_settings {
+  @include card;
+}
+
+.form_div {
+  max-width: 620px;
+  width: 100%;
+  margin: 60px auto;
+}
+
+.waiting_label {
+  display: inline-block;
+  background: #e0e9f9;
+  border: 0;
+  outline: none;
+  padding: 5px 8px;
+  position: relative;
+  font-weight: 400;
+  color: #000000;
+  font-size: 13px;
+  text-align: center;
+  margin: -4px 0px;
+  border-radius: 40px;
+}
+
+.resend_btn {
+  background: $primary-green;
+  width: 62px;
+  border: 0;
+  outline: none;
+  padding: 5px 8px;
+  font-weight: 400;
+  color: $white;
+  font-size: 13px;
+  display: inline-block;
+  text-align: center;
+  margin: -4px 0;
+  border-radius: 40px;
+
+  &:hover {
+    text-decoration: none;
+    background: $primary-blue;
+    color: $white;
+  }
+
+  &:focus {
+    text-decoration: none;
+    color: $white;
+    outline: none;
+  }
+}
+
+
+// Impact
+p.impact_para {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  .impact_icon {
+    width: 16px;
+    height: 16px;
+    background: #ddd;
+    border-radius: 3px;
+  }
+
+  .low_impact {
+    background: #6ac259;
+  }
+
+  .medium_impact {
+    background: #ffc225;
+  }
+
+  .high_impact {
+    background: #e50e0e;
+  }
+}
+
+
+// Result Status Bar
+p.list_results_para {
+  position: relative;
+  overflow: visible;
+}
+
+.statusbarbg {
+  height: 5px;
+  width: 100%;
+  max-width: 80px;
+  display: block;
+  background: #f4f4f4;
+  border-radius: 10px;
+
+  margin-top: -5px;
+  transform: translateY(5px);
+}
+
+.statusbar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 5px;
+  display: block;
+  border-radius: 10px;
+}
+
+.statusbar.bluebarbg {
+  background: #134eb4;
+}
+
+.statusbar.greenbarbg {
+  background: #6ac259;
+}
+
+.statusbar.redbarbg {
+  background: #e50e0e;
+}
+
+.statusbar.yellowbarbg {
+  background: #ffc225;
+}
+
+// Sidebar Actions Template
+.sidebar_section {
+  @include grid(300px 1fr, 20px);
+}
+
+.lr_sidebar_section {
+  @include grid(60px 1fr 60px, 20px);
+
+  .actions_sidebar {
+    z-index: 9;
+
+    .actions_list {
+      width: 60px;
+      left: 300px;
+
+      @include media(xlscreen) {
+        left: 90px;
+      }
+
+      &:hover {
+        width: 300px;
+      }
+    }
+  }
+
+  .actions_sidebar_right {
+    z-index: 9;
+
+    .actions_list {
+      width: 60px;
+      left: auto;
+      right: 20px;
+
+      &:hover {
+        width: 300px;
+      }
+    }
+  }
+}
+
+
+// Status Override, Action Details, System Graphs
+.status_override_div {}
+
+.status_reason_div {
+  button {
+    min-width: 100px;
+  }
+}
+
+.status_override_1 {
+  display: flex;
+  align-items: center;
+
+  .primary_button {
+    margin-left: auto;
+  }
+}
+
+.status_override_1 .status_override_title {
+  margin-right: 15px;
+}
+
+.status_override_title {
+  @include font(16px, 700);
+  color: $primary-blue;
+}
+
+.mark_passed {
+  background: $success-green;
+}
+
+.mark_failed {
+  background: #E50E0E;
+}
+
+.marked_status_div {
+  text-align: center;
+}
+
+.marked_status_div .status_override_title {
+  display: inline-block;
+}
+
+.markedicons_div {
+  @include valign_center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.markedicons_div .status_span {
+  @include dimension(30px);
+  position: relative;
+  display: inline-block;
+  line-height: 30px;
+  top: 0;
+}
+
+.status_override_arrow {
+  display: inline-block;
+  width: 24px;
+  margin: 0 14px;
+  vertical-align: middle;
+}
+
+.marked_status_span {
+  @include dimension(30px);
+  display: inline-block;
+  border-radius: 50px;
+  text-align: center;
+  line-height: 28px;
+  color: #FFF;
+}
+
+.success_green {
+  background: $success-green;
+}
+
+.error_red {
+  background: $failed-red;
+}
+
+.status_override_2 .row {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.status_override_3 {
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+}
+
+.status_undo_div {
+  display: flex;
+  align-items: center;
+  margin-right: 15px;
+  width: calc(100% - 168px);
+}
+
+.status_undo_icons_div {
+  margin-right: 12px;
+  width: 116px;
+  display: flex;
+  align-items: center;
+}
+
+.status_undo_icons_div .status_span {
+  @include dimension(30px);
+  position: relative;
+  display: inline-block;
+  line-height: 28px;
+  top: 0;
+}
+
+.status_span.status_current_span {}
+
+.margin_right_btm15 {
+  margin-right: 15px;
+  margin-bottom: 15px;
+}
+
+.color_status_div {
+  @include valign_center;
+  justify-content: center;
+  gap: 30px;
+  position: relative;
+
+  span {
+    position: relative;
+    padding-left: 20px;
+
+    &::before {
+      content: '';
+      @include abs_position(6px, auto, auto, 0);
+      @include dimension(10px);
+      border-radius: 20px;
+    }
+  }
+
+  .average_blue {
+    &::before {
+      background: #4a59c2;
+    }
+  }
+
+  .threshold_green {
+    &::before {
+      background: $success-green;
+    }
+  }
+}
+
+.system_info {
+  height: 100%;
+  justify-content: center;
+  display: flex;
+  flex-flow: column;
+
+  h5 {
+    @include font(16px, 400);
+    color: $primary-blue;
+    text-align: left;
+    margin: 5px 0 6px;
+  }
+
+  .memory_data {
+    @include font(13px, 700);
+    color: $black;
+    display: block;
+  }
+
+  .memory_data_blue {
+    color: #4a59c2;
+  }
+
+  .memory_data_green {
+    color: $success-green;
+  }
+}
+
+
+// Tabs
+.tabs_navbar_div {
+  ul {
+    @include grid(1fr 1fr, 20px);
+    padding: 0;
+    margin-bottom: 20px;
+    border: 0;
+
+    li {
+      list-style: none;
+      display: inline-block;
+      text-align: center;
+
+      a {
+        @include dimension(100%);
+        @include valign_center();
+        justify-content: center;
+        text-decoration: none;
+        color: #010101;
+        font-weight: 700;
+        border-radius: 5px;
+        background-color: $white;
+        border: #f0f0f0 solid 1px;
+        padding: 30px 15px 30px;
+        margin: 0 auto 0px;
+
+        &:hover {
+          color: $white;
+          font-weight: 700;
+          background-color: $primary-green;
+          border: $primary-green solid 1px;
+        }
+      }
+
+      a.active {
+        color: $white;
+        font-weight: 700;
+        background-color: $primary-green;
+        border: $primary-green solid 1px;
+      }
+    }
+
+  }
+}
+
+
+// Screen Details
+.screen_details {
+  .details_list {
+    margin: 6px 0;
+    padding: 0 10px;
+
+    ul {
+      li {
+        list-style: none;
+        margin: 12px 0;
+        border-bottom: #ececec solid 1px;
+
+        &:last-child {
+          border: 0;
+        }
+
+        h6 {
+          @include font(15px, bold);
+          margin: 0 0 6px 0;
+        }
+
+        p {
+          word-break: break-all;
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+}
+
+
+// Sorting Arrow
+.visualization-table-sortind {
+  content: "\0025bc";
+  color: #ccc;
+  padding-left: 4px;
+}
+
+.visualization-table-sortind_desc:after {
+  content: "\0025bc";
+  color: #ccc;
+  padding-left: 4px;
+  font-size: 10px;
+}
+
+.visualization-table-sortind_asc:after {
+  content: "\0025b2";
+  color: #ccc;
+  padding-left: 4px;
+  font-size: 10px;
+}
+
+
+// Web Screen Details
+.web_details {
+
+
+  .web_canvas {
+    max-width: 400px !important;
+    padding: 16px 17px 97px !important;
+    min-height: auto !important;
+  }
+
+  .web_screen_details {
+    @include valign_center;
+    height: 100%;
+  }
+}
+
+.right_sidebar {
+  @include grid(1fr 320px, 20px);
+}
+
+// Web Settings Navbar
+.web_settings_sidebar {
+  @include grid(300px 1fr, 20px);
+
+  .settings_bar {
+    @include dimension(300px, auto);
+    left: 300px;
+
+    @include media(xlscreen) {
+      left: 90px;
+    }
+  }
+
+  .web_settings {
+    @include card;
+
+    .form_div {
+      max-width: 100%;
+      margin: 20px 0;
+    }
+  }
+}
+
+
+// Settings Navbar
+.settings_bar {
+  @include card;
+  @include dimension(260px, auto);
+  position: fixed;
+  top: 104px;
+  left: 20px;
+  z-index: 99;
+}
+
+.user_info {
+  padding: 30px 20px;
+  position: relative;
+  text-align: center;
+  min-height: 71px;
+
+  .user_icon {
+    margin-bottom: 16px;
+
+    i {
+      font-size: 40px;
+      color: $primary-green;
+    }
+    i.fa-android {
+      color: #a4c639;
+    }
+    i.fa-apple {
+      color: $black;
+    }
+  }
+
+  .user_name {
+    @include text_shorten;
+    @include font(16px, bold);
+    display: block;
+  }
+
+  .user_email {
+    @include text_shorten;
+    display: block;
+  }
+}
+
+.user_navbar {
+  position: relative;
+  padding: 30px 0px 0px 0px;
+
+  &::before {
+    content: '';
+    @include abs_position(0, 0, auto, 0);
+    @include dimension(44px, 2px);
+    background: $primary-green;
+    margin: 0 auto;
+  }
+
+  ul {
+    li {
+      display: block;
+      list-style: none;
+      margin-bottom: 2px;
+
+      a {
+        @include valign_center;
+        @include font(15px);
+        color: $primary-blue;
+        position: relative;
+        padding: 10px 20px;
+        border-radius: 30px;
+
+        &:hover {
+          color: $primary-green;
+          background: #00d18410;
+          text-decoration: none;
+        }
+      }
+
+      .selected {
+        color: $primary-green;
+        background: #00d18410;
+        text-decoration: none;
+      }
+    }
+  }
+}
+
+
+// Steps Count circle
+.steps_count {
+  @include dimension(32px);
+  border-radius: 50px;
+  line-height: 32px;
+  font-weight: 600;
+  text-align: center;
+  background: $primary-green;
+  color: $white;
+  display: inline-block;
+  margin-right: 10px;
+}
+
+.auth_provider {
+  @include valign_center;
+  gap: 14px;
+  margin: 30px 0;
+
+  a {
+    border: 1px solid transparent;
+    padding: 2px 6px;
+    border-radius: 2px;
+
+    &:hover {
+      cursor: pointer;
+      background: $white;
+      border: 1px solid $primary-green;
+    }
+  }
+
+  .selected {
+    cursor: pointer;
+    background: $white;
+    border: 1px solid $primary-green;
+  }
+}
+
+.add_plusiconbtn {
+  @include dimension(36px);
+  @include font(26px);
+  @include valign_center;
+  cursor: pointer;
+  background: $primary-green;
+  border: transparent solid 2px;
+  color: $white;
+  border-radius: 50px;
+  box-shadow: 0 2px 5px 0 rgba(0, 0, 0, .16);
+  outline: none;
+  text-align: center;
+  line-height: 30px;
+  margin-left: auto;
+  flex-direction: column;
+
+  &:hover {
+    text-decoration: none;
+    background: $primary-blue;
+    color: $white;
+  }
+
+  &:focus {
+    text-decoration: none;
+    outline: none;
+  }
+}
+
+.ispwdcheckbox_div {
+  margin-top: 35px;
+}
+
+
+// Header next previous buttons 
+.nxt_prvs_btns_div {
+  @include valign_center;
+  gap: 10px;
+  @include font(14px, bold);
+  padding-right: 14px;
+  margin: 0px;
+  position: relative;
+
+  &:after {
+    @include dimension(1px, 20px);
+    @include abs_position(auto, 0, auto, auto);
+    content: '';
+    background: #cdcdcd;
+  }
+}
+
+.prev_slidebtn {
+  @include valign_center;
+  justify-content: center;
+  @include font(14px, 400);
+  @include dimension(42px);
+  border-radius: 60px;
+  background: transparent;
+  border: $primary-green solid 2px;
+  padding: 8px 12px;
+  color: $primary-blue;
+  outline: none;
+  line-height: 20px;
+
+  i {
+    font-size: 26px;
+  }
+
+  &:hover {
+    background: $primary-green;
+    color: $white;
+  }
+}
+
+.next_slidebtn {
+  @extend .prev_slidebtn;
+}
+
+.selected_count {
+  color: $primary-green;
+  font-weight: 800;
+}
+
+.count_divider {
+  color: #888;
+}
+
+
+// ngx scrollbar
+.actions_list {
+  .simplebar-wrapper {
+    max-height: calc(100vh - 130px) !important;
+  }
+}
+
+.figma_web_container {
+  .simplebar-wrapper {
+    max-height: calc(100vh - 130px) !important;
+  }
+
+  .simplebar-track.simplebar-vertical {
+    right: -17px;
+    top: 8px;
+    bottom: 8px;
+  }
+}
+
+.figma_options_sidebar {
+
+  .simplebar-track.simplebar-vertical {
+    right: -17px;
+    top: 8px;
+    bottom: 8px;
+  }
+
+  .content {
+    .simplebar-wrapper {
+      max-height: 150px !important;
+    }
+
+    .simplebar-track.simplebar-vertical {
+      right: 0px;
+      top: 2px;
+      bottom: 2px;
+    }
+  }
+
+  .simplebar-wrapper {
+    max-height: calc(100vh - 216px) !important;
+  }
+
+}
+
+.scenario_steps {
+  .simplebar-wrapper {
+    max-height: 532px !important;
+  }
+}
+
+.web_canvas {
+  @include media(custom, 1800px) {
+    padding: 27px 26px 105px 27px !important;
+  }
+
+  @include media(xlscreen) {
+    padding: 27px 26px 105px 27px !important;
+  }
+
+  @include media(laptop) {
+    padding: 30px 30px 105px 30px !important;
+    min-height: 580px !important;
+  }
+
+  .simplebar-wrapper {
+    max-height: 361px !important;
+
+    @include media(custom, 1800px) {
+      max-height: 328px !important;
+    }
+
+    @include media(xlscreen) {
+      max-height: 330px !important;
+    }
+
+    @include media(laptop) {
+      max-height: 362px !important;
+    }
+  }
+
+}
+
+
+// Details page structure
+.details_section {
+  @include grid(58.4% 40%, 20px);
+
+  @include media(laptop) {
+    @include grid(1fr, 20px);
+  }
+}
+
+
+
+// Modal
+.modal_content {
+  padding: 30px 10px;
+
+  h4 {
+    margin-top: 0;
+  }
+
+  .simplebar-wrapper {
+    max-height: 48vh !important;
+  }
+
+  .web_details_modal {
+    .simplebar-wrapper {
+      max-height: 212px !important;
+    }
+
+    .screen_container {
+      height: 216px;
+    }
+  }
+
+  .content {
+    margin-top: 20px;
+  }
+}
+
+.modal_buttons_div {
+  @include valign_center;
+  justify-content: center;
+  gap: 20px;
+}
+
+
+// Range Slider 
+.range_slider {
+  margin: 20px 0;
+
+  .ngx-slider {
+    .ngx-slider-pointer {
+      background-color: $primary-green;
+      width: 26px !important;
+      height: 26px !important;
+      top: -12px;
+
+      &:after {
+        background: $white !important;
+        top: 9px;
+        left: 9px;
+      }
+    }
+
+    .ngx-slider-selection {
+      background-color: $primary-green;
+    }
+  }
+}
+
+
+// OR
+.or_div {
+  position: relative;
+  color: #0f1219 !important;
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+  width: 100%;
+  max-width: 260px;
+  margin: 20px auto 16px auto;
+
+  &:before {
+    position: absolute;
+    top: 50%;
+    left: 0;
+    width: 100%;
+    height: 1px;
+    background: #cecfd1;
+    content: '';
+  }
+
+  span {
+    background: #FFF;
+    display: inline-block;
+    position: relative;
+    padding: 0 14px;
+  }
+}
+
+// Dashboard Graphs Height
+.graph-height {
+  height: 271px;
+}
+
+.top-padding {
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
+// Multiple Buttons inline
+.buttons_div {
+  @include valign_center;
+  justify-content: center;
+  gap: 20px;
+
+  button {
+    @include valign_center;
+    justify-content: center;
+    gap: 6px;
+    width: 120px;
+
+    i {
+      font-size: 20px;
+    }
+  }
+}
+
+
+// Inpur Label with anchor button
+.label_anchor {
+  position: relative;
+
+  a.anchor {
+    @include abs_position(0, 3px, null, auto);
+    z-index: 9;
+  }
+}
+
+// Web Testruns page graph
+.web_graph {
+  .graph-height {
+    height: 633px;
+  }
+}
+
+//
+.qbot_grey {
+  background: #5a606b !important;
+  color: #fff !important;
+}
+
+
+
+// Iframe in Lab
+.iframe {
+  .actions_list {
+    height: calc(100vh - 44px) !important;
+    top: 20px !important;
+  }
+}

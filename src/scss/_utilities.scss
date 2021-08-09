@@ -1,0 +1,80 @@
+.fullwidth {
+  width: 100% !important;
+}
+
+.margin20px {
+  margin: 20px;
+}
+
+.text_center {
+  text-align: center;
+}
+
+.text_right {
+  text-align: right;
+
+  button {
+    margin-left: 15px;
+  }
+
+  button.fullwidth {
+    margin: 0;
+  }
+}
+
+.dblock {
+  display: block;
+}
+
+.wordbreak {
+  word-break: break-all;
+  white-space: normal !important;
+}
+
+.font-size-large {
+  @include valign_center;
+  @include font(18px, 400);
+  height: 60vh;
+  justify-content: center;
+
+  p {
+    color: $primary-blue;
+  }
+}
+
+.simplebar-content-wrapper{
+  height: 100% !important;
+}
+
+
+// Label left Dropdown
+.schedule_div {
+  .dropdown_wrpr, .input_div {
+    display: flex;
+    align-items: center;
+    flex-direction: row !important;
+    border: #cdcdcd solid 1px;
+    
+    label {
+      background: #e2f1ff;
+      padding: 13px;
+      margin: 0 !important;
+      white-space: nowrap;
+      width: 100px;
+      text-align: center;
+    }
+    input {
+      border-color: transparent !important;
+    }
+    .input_required {
+      top: 12px !important;
+    }
+    .selected_value_div {
+      border: 0;
+    }
+    .dropdown_inner_div {
+      right: 0;
+      top: 100%;
+    }
+  }
+}

@@ -1,0 +1,24 @@
+.card {
+  // box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  max-width: 300px;
+  margin: auto;
+  // text-align: center;
+  padding: 0px;
+  font-family: arial;
+  border-radius: 20px;
+  border: none;
+  background-color: transparent;
+  img{
+    border-radius: 20px;
+    height: 265px;
+  }
+}
+
+.price {
+  color: rgb(33, 41, 66);
+  font-size: 16px;
+}
+
+.fa-file-text-o{
+  color: #ee5151
+}

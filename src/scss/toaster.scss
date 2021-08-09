@@ -1,0 +1,8 @@
+.toaster.show_message{animation: fadeIn 0.5s; display: block;}
+.toaster{ animation: fadeOut 0.5s forwards; display: none; z-index: 999; width: 100%; max-width: 400px; border: #DDD solid 1px; border-radius: 6px; box-shadow: 6px 6px 34px -16px rgba(0,0,0,0.5); background: white; position: fixed; right: 60px; top: 10px; padding: 30px 20px 30px 80px;}
+.toaster i{color: #FFF; font-size: 18px; width: 34px; height: 34px; border-radius: 50px; text-align: center; line-height: 34px; position: absolute; left: 24px; top: 23px;}
+.toaster i.success_green{background: #6ac259;}
+.toaster i.warning_yellow{background: #ffc225;}
+.toaster i.error_red{background: #e50e0e;}
+.toaster i.running_blue {background: #00D184;}
+.toaster h4{color: #000; font-size: 16px; font-weight: 700; margin: 0;}

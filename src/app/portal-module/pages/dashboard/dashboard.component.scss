@@ -1,0 +1,54 @@
+@import "../../../../scss/mixins";
+
+.tiles_cards {
+  @include grid(repeat(3, 1fr), 20px);
+  margin-bottom: 20px;
+
+  @include media(tablet) {
+    @include grid(repeat(2, 1fr), 20px);
+  }
+
+  @include media(mobile) {
+    @include grid(repeat(1, 1fr), 20px);
+  }
+}
+
+.handyman_icon_listing {
+  margin: -1px 6px -1px 0;
+}
+
+.text-capitalized {
+  text-transform: capitalize;
+}
+
+.font-wb{
+  font-weight: 800;
+  font-size: 3rem !important;
+}
+
+.display-f{
+  display: flex;
+  position: absolute;
+  right: 0;
+}
+
+.mr-neg10{
+  margin-right: -10px;
+}
+
+.zindex-front{
+  z-index: 9;
+}
+
+.zindex-behind{
+  z-index: -1;
+}
+
+.our-comm-border{
+  border-left: 5px #dbdbdb solid
+}
+
+.our-comm{
+  margin-bottom: 0px;
+  margin-top: 8px;
+}

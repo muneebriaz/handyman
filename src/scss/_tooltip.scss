@@ -1,0 +1,35 @@
+.tooltip_icon {
+  position: absolute;
+  right: 16px;
+  top: 10px;
+}
+
+.tooltip_icon:hover~.custom_tooltip {
+  display: block;
+}
+
+.custom_tooltip {
+  display: none;
+  max-width: 290px;
+  text-align: center;
+  background: #333;
+  color: #FFF;
+  padding: 5px 10px;
+  font-size: 12px;
+  position: absolute;
+  right: 48px;
+  top: 8px;
+  border-radius: 3px;
+
+  &:after {
+    content: '';
+    width: 0px;
+    height: 0px;
+    position: absolute;
+    top: 8px;
+    right: -6px;
+    border-top: 6px solid transparent;
+    border-bottom: 6px solid transparent;
+    border-left: 6px solid #333;
+  }
+}

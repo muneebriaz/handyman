@@ -1,0 +1,76 @@
+<app-portal [showNavBar]="true">
+
+
+  <!-- Page content -->
+  <ng-container component>
+    <div class="dashboard">
+      <div class="container">
+
+        <div class="row">
+          <div class="col-md-12">
+            <h5 class="text-center font-weight-normal">
+              Most Trusted Handyman Service in Canada
+            </h5>
+            <h1 class="text-center font-wb mt-4 mb-4">Find a handyman near you</h1>
+          </div>
+
+          <div class="col-md-12 mt-4 mb-3">
+            <div class="row">
+              <div class="col-md-6">
+                <div class="display-f pr-4">
+
+                  <app-category-circle class="mr-neg10" [type]="'image'"
+                    [image]="'https://toppng.com/uploads/preview/urple-circle-light-purple-circle-11563495814bnl7lqsq9l.png'">
+                  </app-category-circle>
+
+                  <app-category-circle class="mr-neg10 zindex-front" [type]="'image'"
+                    [image]="'https://toppng.com/uploads/preview/urple-circle-light-purple-circle-11563495814bnl7lqsq9l.png'">
+                  </app-category-circle>
+
+                  <app-category-circle class="mr-neg10" [type]="'image'"
+                    [image]="'https://toppng.com/uploads/preview/urple-circle-light-purple-circle-11563495814bnl7lqsq9l.png'">
+                  </app-category-circle>
+
+                  <app-category-circle class="zindex-behind" [type]="'text'" [text]="'your text here'">
+                  </app-category-circle>
+
+                </div>
+
+              </div>
+              <div class="col-md-6 our-comm-border">
+
+                <div class="pl-4">
+                  <label for="" class="our-comm">
+                    Our Community
+                  </label>
+                  <p>
+                    Lorem ipsum dolor sit amet,
+                  </p>
+                </div>
+
+              </div>
+            </div>
+          </div>
+
+          <!-- SEARCH BOX -->
+          <div class="col-md-12 mt-5">
+
+            <app-search-card></app-search-card>
+
+          </div>
+
+          <!-- SERVICES BOX -->
+          <div class="col-md-12 mt-5">
+
+            <app-services-box></app-services-box>
+
+
+          </div>
+
+
+        </div>
+
+      </div>
+    </div>
+  </ng-container>
+</app-portal>

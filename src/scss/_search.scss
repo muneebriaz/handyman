@@ -1,0 +1,17 @@
+.search_section {
+    margin-bottom: 24px;
+    position: relative;
+    width: 100%;
+  
+    input {
+      @include input;
+      padding: 12px 15px 12px 44px;
+    }
+  }
+  
+  .search_icon {
+    @include abs_position(12px, auto, auto, 12px);
+    @include dimension(22px, auto);
+    fill: rgb(88, 86, 86);
+    opacity: 0.6;
+  }

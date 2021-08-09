@@ -1,0 +1,112 @@
+.data_loading {
+  height: 56px;
+  border-radius: 2px;
+  background-color: rgb(255, 255, 255);
+  border: #F0F0F0 solid 1px;
+  width: 100%;
+  font-weight: 400;
+  padding: 10px 12px;
+  margin-bottom: 5px;
+  margin-top: 5px;
+
+  span {
+    padding: 5px 5px 5px 30px;
+    position: relative;
+    top: 25%;
+
+    &::before {
+      @include dimension(17px);
+      content: '';
+      box-sizing: border-box;
+      position: absolute;
+      left: 2px;
+      top: 6px;
+      display: inline-block;
+      border-radius: 50%;
+      border-top: 2px solid $primary-green;
+      border-right: 2px solid transparent;
+      -webkit-animation: spinner .6s linear infinite;
+      animation: spinner .6s linear infinite;
+    }
+  }
+}
+
+.loading {
+  width: 100%;
+  font-weight: 400;
+  padding: 10px 12px;
+  margin-bottom: 5px;
+
+  span {
+    padding: 5px 5px 5px 30px;
+    position: relative;
+    top: 25%;
+
+    &::before {
+      @include dimension(17px);
+      content: '';
+      box-sizing: border-box;
+      position: absolute;
+      left: 2px;
+      top: 6px;
+      display: inline-block;
+      border-radius: 50%;
+      border-top: 2px solid $primary-green;
+      border-right: 2px solid transparent;
+      -webkit-animation: spinner .6s linear infinite;
+      animation: spinner .6s linear infinite;
+    }
+  }
+}
+
+.loading_data:before {
+  content: '';
+  box-sizing: border-box;
+  left: 0px;
+  top: 6px;
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  border-top: 2px solid #fff;
+  border-right: 2px solid transparent;
+  -webkit-animation: spinner .6s linear infinite;
+  animation: spinner .6s linear infinite;
+}
+
+.data_loading_div:before {
+  content: '';
+  box-sizing: border-box;
+  /*position: absolute;*/
+  left: 0px;
+  top: 6px;
+  display: inline-block;
+  width: 17px;
+  height: 17px;
+  border-radius: 50%;
+  border-top: 2px solid #2e9ea2;
+  border-right: 2px solid transparent;
+  -webkit-animation: spinner .6s linear infinite;
+  animation: spinner .6s linear infinite;
+}
+
+@keyframes spinner {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
+
+@-webkit-keyframes spinner {
+  to {
+    -webkit-transform: rotate(360deg);
+    transform: rotate(360deg)
+  }
+}
+
+
+.noresults_txt {
+  @extend .data_loading;
+  line-height: 34px;
+  text-align: center;
+}
